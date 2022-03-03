@@ -1,0 +1,40 @@
+//attributes
+:title: Installing 3Scale on OpenShift using Nooba for PV
+
+[id='3Scale-security-demo'] 
+= {title}
+
+//Description text for Solution Pattern
+Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3Scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3Scale admins can customize the developer portal using HTML, CSS, JS, etc, and make it own aligned to their own API audiences. 3Scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3Scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
+
+This blog post explores the installation of 3Scale on OpenShift 4.x using Nooba (part of Red Hat OpenShift Container Storage) for RWX storage.
+
+
+*Credentials:*
+OpenShift Username: Use your OPENTLC credentials to log into the OpenShift console
+OpenShift Password: Use your OPENTLC credentials to log into the OpenShift console
+
+# Installation Overview
+1. Request RHPDS + create project
+2. In web console, update machinesets to change 3rd set from 0 to 1 replica
+3. Install 3scale operator
+4. Install OpenShift Container Storage operator
+5. Create ClusterStorage resource using all 3 machines
+6. Create APIManager resource
+
+'''
+
+### 1. Request Openshift from RHPDS
+1. Order `OpenShift Workshop 4.8` on the [RHPDS catalog](https://rhpds.redhat.com/catalog/explorer).
+2. Confirm the warning, and leave all other default settings.
+3. Select `Training` as the Purpose.
+4. Submit - this can take about 30 minutes to finish, and you will get an email. 
+5. If the provision fails, simply repeat the previous steps.
+6. Once provisioned, `ssh` to the bastion using the SSH password provided in the email.
+7. sudo as `root` user:
+
+    # sudo -i
+
+8. Create `3scale-amp` project.
+    
+    # oc new-project 3scale-amp
