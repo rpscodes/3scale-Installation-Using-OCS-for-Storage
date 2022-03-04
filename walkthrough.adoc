@@ -56,8 +56,17 @@ You can also use the OpenShift Console UI to create a project
 image::images/terminal.gif[cli]
 
 ### 2. Update machinesets
-1. In the web UI, navigate to `Compute` > `MachineSets`
-2. You should see 3 MachineSets, with one spinned down. Update the machine count of that MachineSet to 1.
- image:images/ms-1.png[machineset-1,1440,900]
- image:images/ms-2.png[machineset-2, height=250]
- image:images/ms-3.png[machineset-3, height=200]
+. In the web UI, navigate to `Compute` > `MachineSets`
+. You should see 3 MachineSets, with one spinned down. Update the machine count of that MachineSet to 1.
++
+image:images/ms-1.png[machineset-1]
++
+image:images/ms-2.png[machineset-2]
++
+image:images/ms-3.png[machineset-3]
++
+image:images/ms-3.png[machineset-4]
+
+. rfdhtkjfhgdkj
+
+ 
