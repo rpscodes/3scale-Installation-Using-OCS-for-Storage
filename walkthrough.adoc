@@ -39,6 +39,7 @@ image::images/rhpds-order.png[rhpds-order]
 
 ### 2. Create a 3Scale project
 . Once provisioned, you can use `ssh` to the bastion using the SSH password provided in the email to create a new project.
++
 [NOTE]
 ====
 You can also use the OpenShift Console UI to create a project
@@ -47,10 +48,16 @@ You can also use the OpenShift Console UI to create a project
 . sudo as `root` user:
 
     # sudo -i
-
+    
 . Create `3scale-amp` project.
     
     # oc new-project 3scale-amp
-  +
-  
-  image::images/terminal.gif[cli]
++
+image::images/terminal.gif[cli]
+
+### 2. Update machinesets
+1. In the web UI, navigate to `Compute` > `MachineSets`
+2. You should see 3 MachineSets, with one spinned down. Update the machine count of that MachineSet to 1.
+ image:images/ms-1.png[machineset-1,1440,900]
+ image:images/ms-2.png[machineset-2, height=250]
+ image:images/ms-3.png[machineset-3, height=200]
