@@ -55,7 +55,7 @@ You can also use the OpenShift Console UI to create a project
 +
 image::images/terminal.gif[cli]
 
-### 2. Update machinesets
+### 3. Update machinesets
 . In the web UI, navigate to `Compute` > `MachineSets`
 . You should see 3 MachineSets, with one spinned down. Update the machine count of that MachineSet to 1.
 +
@@ -67,6 +67,19 @@ image:images/ms-3.png[machineset-3]
 +
 image:images/ms-3.png[machineset-4]
 
-. rfdhtkjfhgdkj
+### 3. Install 3Scale Operator
+. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type 3Scale in the search box and click on the Red hat Integration - 3Scale Operator and Install.  Make sure you are in the 3Scale-amp project while you do this and following operations
++
+image:images/3scale-oh.png[OperatorHub-3Scale]
++
+image:images/3scale-operator-install-1.png[Operator-Install-1]
+
+. Choose 'threescale-2.10' and leave the rets of the values as default. Complete the operator installation 
++
+image:images/3scale-operator-install-1.png[Operator-Install-1]
+
+. After the installation is complete. Navigate to Operators > Installed Operators to verify the same
++
+image:images/installed-op.png[3scale-operator-install-verified]
 
  
