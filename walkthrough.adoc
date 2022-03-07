@@ -74,7 +74,7 @@ image:images/3scale-oh.png[OperatorHub-3Scale]
 +
 image:images/3scale-operator-install-1.png[Operator-Install-1]
 
-. Choose 'threescale-2.10' and leave the rets of the values as default. Complete the operator installation 
+. Choose 'threescale-2.10' and leave the rest of the values as default. Complete the operator installation 
 +
 image:images/3scale-operator-install-1.png[Operator-Install-1]
 
