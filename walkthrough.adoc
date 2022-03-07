@@ -138,11 +138,12 @@ image:images/requested-cap-3.png[OCS-Requested-Capacity-3]
       password: '<< your password>>'
       port: '587'
       username: '<< your userid>>'
-      
+  
 . Add the configmap to `3scale-amp` namespace:
 
     # oc create -f smtp.yml
- 
+    
++
 [NOTE]
 ====
 Alternatively, You can also create this configmap by using the Console UI. Select the 3scale-amp project. From the 3Scale-amp project navigate to Home > API Explorer > ConfigMap > Instances > Create ConfigMap. Remove the the existing yaml and copy paste the one shown above
@@ -170,11 +171,12 @@ image:images/console-configmap.gif[config-map]
           limits:
             memory: 6Gi
       wildcardDomain: <WILDCARD-DOMAIN>
- 
+
+
 In our case replace the <WILDCARD-DOMAIN> with OpenShift route i.e apps.cluster-b633.b633.sandbox1574.opentlc.com when using RHPDS. Be sure to remove the placeholder marks for your parameters: `< >`.
 
 The `wildcardDomain` parameter can be any desired name you wish to give that resolves to the IP addresses
-of OpenShift router nodes. Be sure to remove the placeholder marks for your parameters: `< >`.
+of OpenShift router nodes.
 
 When 3scale has been installed, a default *tenant* is created for you ready to be used,
 with a fixed URL: `3scale-admin.${wildcardDomain}`.
@@ -190,7 +192,8 @@ Optionally, you can create new tenants on the _MASTER portal URL_, with a fixed 
 https://master.example.com
 ```
 
-All required access credentials are stored in `system-seed` secret.
+
+
 
 [NOTE]
 ====
@@ -200,4 +203,22 @@ image:images/console-apimanager.gif[api-manager]
 ====
 
 
-. Wait for 10 mins for all the 3Scale pods to be ready. You can check the progress and see them all coming up by Navigating to Developer > Topology
+### 6. Verify the Installation
+
+. Wait for 10 mins for all the 3Scale pods to be ready. You can check the progress and see them all coming up by navigating to Developer > Topology
++
+image:images/topology.png[topology]
+
+. Once all the pods are Up (have a dark blue circle around them). Click on the system-app to get the URLs of the master tenant and admin-tenant of 3Scale. 
++
+image:images/admin-tenant-route.gif[admin-tenant]
+
+. All required access credentials are stored in `system-seed` secret. Navigate to Secrets > 'Search for 'system-seed' anc lick on it > Navigate to the bottom of the details page to find the admin_user and admin_password used to login to 3Scale 
++
+image:images/system-seed.png[system-seed]
++
+image:images/cred.png[admin-cred]
+
+. Login to the `3scale-admin` tenant and verify that you can open the Developer Portal and the Content is loaded correctly.
++
+image:images/dev-portal.gif[dev-portal]
