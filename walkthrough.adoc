@@ -222,3 +222,7 @@ image:images/cred.png[admin-cred]
 . Login to the `3scale-admin` tenant and verify that you can open the Developer Portal and the Content is loaded correctly.
 +
 image:images/dev-portal.gif[dev-portal]
+
+Notes: Where can users find the wildcard
+Write about API Manager a little bit
+Make changes to the intro
