@@ -84,4 +84,30 @@ image:images/installed-op.png[3scale-operator-install-verified]
 
  
 ### 4. Install the OpenShift Container Storage Operator
-. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type Container Storage in the search box and click on the OpenShift Container Storage Operator and Install.
+. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type 'OpenShift Container Storage' in the search box and click on the OpenShift Container Storage Operator and Install.
++
+image:images/ocs-oh.png[OperatorHub-OCS]
++
+image:images/ocs-operator-install-1.png[OCS-Operator-Install-1]
+
+. Select update channel `stable-4.8` and install. The operator installation might take few minutes wai until the Create Storage Cluster button is activated. 
++
+image:images/ocs-operator-install-2.png[OCS-Operator-Install-2]
++
+[NOTE]
+====
+OpenShift Container Storage Operator will create the 'openshift-storage' namespace/project by default. This demo uses the default namespace. Users can choose any other namespace based on their scenario. 
+====
+
+. After installing the operator, you should see this message prompting you to create a `StorageCluster`. Click on the Create Storage Cluster Button
++
+image:images/ocs-create-cluster.png[OCS-Create-Cluster]
+
+. Set `Requested Capacity` to `0.5 TiB`
+. Select all three nodes. All other settings can keep their defaults. Hit Create. If you see a `404` message, reload your browser.
++
+image:images/requested-cap.png[OCS-Requested-Capacity]
++
+image:images/requested-cap-2.png[OCS-Requested-Capacity-2]
++
+image:images/requested-cap-3.png[OCS-Requested-Capacity-3]
