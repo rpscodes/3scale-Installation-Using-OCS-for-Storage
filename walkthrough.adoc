@@ -53,7 +53,7 @@ You can also use the OpenShift Console UI to create a project
     
     # oc new-project 3scale-amp
 +
-image::images/terminal.gif[cli]
+image::images/terminal-3.gif[cli]
 
 ### 3. Update machinesets
 . In the web UI, navigate to `Compute` > `MachineSets`
