@@ -83,3 +83,5 @@ image:images/3scale-operator-install-1.png[Operator-Install-1]
 image:images/installed-op.png[3scale-operator-install-verified]
 
  
+### 4. Install the OpenShift Container Storage Operator
+. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type Container Storage in the search box and click on the OpenShift Container Storage Operator and Install.
