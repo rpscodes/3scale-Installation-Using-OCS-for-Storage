@@ -113,6 +113,7 @@ image:images/requested-cap-2.png[OCS-Requested-Capacity-2]
 image:images/requested-cap-3.png[OCS-Requested-Capacity-3]
 
 ### 5. Create APIManager Resource
+Deploying the APIManager custom resource will make the operator begin processing and will deploy a 3scale solution from it
 
 . Open the terminal and check if you are in the 3Scale-amp project:
 
@@ -173,7 +174,10 @@ image:images/console-configmap.gif[config-map]
       wildcardDomain: <WILDCARD-DOMAIN>
 
 
-In our case replace the <WILDCARD-DOMAIN> with OpenShift route i.e apps.cluster-b633.b633.sandbox1574.opentlc.com when using RHPDS. Be sure to remove the placeholder marks for your parameters: `< >`. You can find the wildcard dns of your OpenShift cluster by typing in this command on the terminal window:
+In our case replace the <WILDCARD-DOMAIN> with OpenShift route i.e apps.cluster-b633.b633.sandbox1574.opentlc.com when using RHPDS. Be sure to remove the placeholder marks for your parameters: `< >`. You can find the wildcard dns of your OpenShift cluster from the Console URL 
+image:images/wildcard-domain.png[console-url]
+
+or by typing the below in this command on the terminal window:
 
     oc get ingresscontroller default -n openshift-ingress-operator -o json | jq -r '.status.domain'
 
