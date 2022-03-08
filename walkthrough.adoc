@@ -11,15 +11,16 @@ Developers portals have become a very important starting point for businesses th
 
 This blog post explores the installation of 3Scale on OpenShift 4.x using Cephfs (part of Red Hat OpenShift Container Storage) for RWX storage. We will be using the 3Scale Operator and OpenShift Container Storage Operator in this excercise. 
 
-## Red Hat Integration 3Scale Operator
+## Red Hat Integration 3Scale Operator Overview
 The 3scale Operator creates and maintains the Red Hat 3scale API Management on OpenShift in various deployment configurations. The Operator also has configurable setting that'll make sure make sure you receive automatic updates of micro releases of the product. The Operator provides the following functionality:
+
 * A way to install a 3scale API Management solution, providing configurability options at the time of installation
 * Upgrade from previously installed 3scale API Management solution
 * Reconcilliation Tunable CRD parameters after 3scale API Management solution is installed
 * Ability to define 3scale API definitions and set them into a 3scale API Management solution
 
 
-## OpenShift Container Storage Operator
+## OpenShift Container Storage Operator Overview
 Red Hat OpenShift Container Storage deploys three operators.
 
 * OpenShift Container Storage operator
@@ -44,6 +45,12 @@ OpenShift Password: Use your OPENTLC credentials to log into the OpenShift conso
 . Install OpenShift Container Storage operator
 . Create ClusterStorage resource using all 3 machines
 . Create APIManager resource
+
+*Credentials:* 
+
+OpenShift Username: Use your OPENTLC credentials to log into the OpenShift console + 
+
+OpenShift Password: Use your OPENTLC credentials to log into the OpenShift console
 
 '''
 
