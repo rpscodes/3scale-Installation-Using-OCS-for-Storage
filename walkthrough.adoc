@@ -9,8 +9,27 @@ Developers portals have become a very important starting point for businesses th
 
 3Scale admins can customize the developer portal using HTML, CSS, JS, etc,. 3Scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3Scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
 
-This blog post explores the installation of 3Scale on OpenShift 4.x using cephfs (part of Red Hat OpenShift Container Storage) for RWX storage.
+This blog post explores the installation of 3Scale on OpenShift 4.x using Cephfs (part of Red Hat OpenShift Container Storage) for RWX storage. We will be using the 3Scale Operator and OpenShift Container Storage Operator in this excercise. 
 
+## Red Hat Integration 3Scale Operator
+The 3scale Operator creates and maintains the Red Hat 3scale API Management on OpenShift in various deployment configurations. The Operator also has configurable setting that'll make sure make sure you receive automatic updates of micro releases of the product. The Operator provides the following functionality:
+* A way to install a 3scale API Management solution, providing configurability options at the time of installation
+* Upgrade from previously installed 3scale API Management solution
+* Reconcilliation Tunable CRD parameters after 3scale API Management solution is installed
+* Ability to define 3scale API definitions and set them into a 3scale API Management solution
+
+
+## OpenShift Container Storage Operator
+Red Hat OpenShift Container Storage deploys three operators.
+
+* OpenShift Container Storage operator
+The OpenShift Container Storage operator is the primary operator for OpenShift Container Storage. The ocs-operator is one of the three main operators of OpenShift Container Storage and can be described as a "meta" operator. It is an operator meant to influence other operators and serves as a configuration gateway for the features provided by the other operators. It does not directly manage the other operators.It serves to facilitate the other operators in OpenShift Container Storage by performing administrative tasks outside their scope as well as watching and configuring their CustomResources. 
+
+* Rook
+Rook deploys and manages Ceph on OpenShift, which provides block and file storage. *_We will be using the Cephfs storage class as a part of this excercise._* 
+
+* NooBaa operator
+The NooBaa operator deploys and manages the NooBaa Multi-Cloud Gateway on OpenShift, which provides object storage.
 
 *Credentials:* +
 
@@ -18,7 +37,7 @@ OpenShift Username: Use your OPENTLC credentials to log into the OpenShift conso
 
 OpenShift Password: Use your OPENTLC credentials to log into the OpenShift console
 
-# Installation Overview
+## Installation Overview
 . Request RHPDS + create project
 . In web console, update machinesets to change 3rd set from 0 to 1 replica
 . Install 3scale operator
