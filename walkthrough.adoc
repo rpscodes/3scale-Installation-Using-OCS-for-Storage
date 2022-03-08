@@ -1,13 +1,15 @@
 //attributes
-:title: Installing 3Scale on OpenShift using Nooba for PV
+:title: Installing 3Scale on OpenShift using OpenShift Container Storage 
 
 [id='3Scale-security-demo'] 
 = {title}
 
 //Description text for Solution Pattern
-Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3Scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3Scale admins can customize the developer portal using HTML, CSS, JS, etc, and make it own aligned to their own API audiences. 3Scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3Scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
+Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3Scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3Scale users can customize the look and feel of the entire Developer Portal to match your own branding. They have complete control over every element of the portal in order to can make it as easy as possible for developers to learn how to use their API. A successful API Developer Portal will help your developers turn concepts into working apps in no time at all.
 
-This blog post explores the installation of 3Scale on OpenShift 4.x using Nooba (part of Red Hat OpenShift Container Storage) for RWX storage.
+3Scale admins can customize the developer portal using HTML, CSS, JS, etc,. 3Scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3Scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
+
+This blog post explores the installation of 3Scale on OpenShift 4.x using cephfs (part of Red Hat OpenShift Container Storage) for RWX storage.
 
 
 *Credentials:* +
