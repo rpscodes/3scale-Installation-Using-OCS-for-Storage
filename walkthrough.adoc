@@ -173,7 +173,9 @@ image:images/console-configmap.gif[config-map]
       wildcardDomain: <WILDCARD-DOMAIN>
 
 
-In our case replace the <WILDCARD-DOMAIN> with OpenShift route i.e apps.cluster-b633.b633.sandbox1574.opentlc.com when using RHPDS. Be sure to remove the placeholder marks for your parameters: `< >`.
+In our case replace the <WILDCARD-DOMAIN> with OpenShift route i.e apps.cluster-b633.b633.sandbox1574.opentlc.com when using RHPDS. Be sure to remove the placeholder marks for your parameters: `< >`. You can find the wildcard dns of your OpenShift cluster by typing in this command on the terminal window:
+
+    oc get ingresscontroller default -n openshift-ingress-operator -o json | jq -r '.status.domain'
 
 The `wildcardDomain` parameter can be any desired name you wish to give that resolves to the IP addresses
 of OpenShift router nodes.
@@ -223,6 +225,6 @@ image:images/cred.png[admin-cred]
 +
 image:images/dev-portal.gif[dev-portal]
 
-Notes: Where can users find the wildcard
+
 Write about API Manager a little bit
 Make changes to the intro
