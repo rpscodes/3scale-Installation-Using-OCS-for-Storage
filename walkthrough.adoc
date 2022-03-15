@@ -5,13 +5,13 @@
 = {title}
 
 //Description text for Solution Pattern
-Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3Scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3Scale users can customize the look and feel of the entire Developer Portal to match your own branding. They have complete control over every element of the portal in order to can make it as easy as possible for developers to learn how to use their API. A successful API Developer Portal will help your developers turn concepts into working apps in no time at all.
+Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3scale users can customize the look and feel of the entire Developer Portal to match your own branding. They have complete control over every element of the portal in order to can make it as easy as possible for developers to learn how to use their API. A successful API Developer Portal will help your developers turn concepts into working apps in no time at all.
 
-3Scale admins can customize the developer portal using HTML, CSS, JS, etc,. 3Scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3Scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
+3scale admins can customize the developer portal using HTML, CSS, JS, etc,. 3scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
 
-This blog post explores the installation of 3Scale on OpenShift 4.x using Cephfs (part of Red Hat OpenShift Container Storage) for RWX storage. We will be using the 3Scale Operator and OpenShift Container Storage Operator in this excercise. 
+This blog post explores the installation of 3scale on OpenShift 4.x using Cephfs (part of Red Hat OpenShift Container Storage) for RWX storage. We will be using the 3scale Operator and OpenShift Container Storage Operator in this excercise. 
 
-## Red Hat Integration 3Scale Operator Overview
+## Red Hat Integration 3scale Operator Overview
 The 3scale Operator creates and maintains the Red Hat 3scale API Management on OpenShift in various deployment configurations. The Operator also has configurable setting that'll make sure make sure you receive automatic updates of micro releases of the product. The Operator provides the following functionality:
 
 * A way to install a 3scale API Management solution, providing configurability options at the time of installation
@@ -65,7 +65,7 @@ image::images/rhpds-order.png[rhpds-order]
 . If the provision fails, simply repeat the previous steps.
 
 
-### 2. Create a 3Scale project
+### 2. Create a 3scale project
 . Once provisioned, you can use `ssh` to the bastion using the SSH password provided in the email to create a new project.
 +
 [NOTE]
@@ -95,10 +95,10 @@ image:images/ms-3.png[machineset-3]
 +
 image:images/ms-3.png[machineset-4]
 
-### 3. Install 3Scale Operator
-. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type 3Scale in the search box and click on the Red hat Integration - 3Scale Operator and Install.  Make sure you are in the 3Scale-amp project while you do this and following operations
+### 3. Install 3scale Operator
+. From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type 3scale in the search box and click on the Red hat Integration - 3scale Operator and Install.  Make sure you are in the 3scale-amp project while you do this and following operations
 +
-image:images/3scale-oh.png[OperatorHub-3Scale]
+image:images/3scale-oh.png[OperatorHub-3scale]
 +
 image:images/3scale-operator-install-1.png[Operator-Install-1]
 
@@ -143,7 +143,7 @@ image:images/requested-cap-3.png[OCS-Requested-Capacity-3]
 ### 5. Create APIManager Resource
 Deploying the APIManager custom resource will make the operator begin processing and will deploy a 3scale solution from it
 
-. Open the terminal and check if you are in the 3Scale-amp project:
+. Open the terminal and check if you are in the 3scale-amp project:
 
     # oc project
     
@@ -175,7 +175,7 @@ Deploying the APIManager custom resource will make the operator begin processing
 +
 [NOTE]
 ====
-Alternatively, You can also create this configmap by using the Console UI. Select the 3scale-amp project. From the 3Scale-amp project navigate to Home > API Explorer > ConfigMap > Instances > Create ConfigMap. Remove the the existing yaml and copy paste the one shown above
+Alternatively, You can also create this configmap by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Home > API Explorer > ConfigMap > Instances > Create ConfigMap. Remove the the existing yaml and copy paste the one shown above
 image:images/console-configmap.gif[config-map]
 ====
 
@@ -239,15 +239,15 @@ image:images/console-apimanager.gif[api-manager]
 
 ### 6. Verify the Installation
 
-. Wait for 10 mins for all the 3Scale pods to be ready. You can check the progress and see them all coming up by navigating to Developer > Topology
+. Wait for 10 mins for all the 3scale pods to be ready. You can check the progress and see them all coming up by navigating to Developer > Topology
 +
 image:images/topology.png[topology]
 
-. Once all the pods are Up (have a dark blue circle around them). Click on the system-app to get the URLs of the master tenant and admin-tenant of 3Scale. 
+. Once all the pods are Up (have a dark blue circle around them). Click on the system-app to get the URLs of the master tenant and admin-tenant of 3scale. 
 +
 image:images/admin-tenant-route.gif[admin-tenant]
 
-. All required access credentials are stored in `system-seed` secret. Navigate to Secrets > 'Search for 'system-seed' anc lick on it > Navigate to the bottom of the details page to find the admin_user and admin_password used to login to 3Scale 
+. All required access credentials are stored in `system-seed` secret. Navigate to Secrets > 'Search for 'system-seed' anc lick on it > Navigate to the bottom of the details page to find the admin_user and admin_password used to login to 3scale 
 +
 image:images/system-seed.png[system-seed]
 +
