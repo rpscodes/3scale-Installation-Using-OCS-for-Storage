@@ -1,7 +1,7 @@
 //attributes
-:title: Installing 3Scale on OpenShift using OpenShift Container Storage 
+:title: Installing 3scale on OpenShift using OpenShift Container Storage 
 
-[id='3Scale-security-demo'] 
+[id='3scale-security-demo'] 
 = {title}
 
 //Description text for Solution Pattern
@@ -231,7 +231,7 @@ https://master.example.com
 
 [NOTE]
 ====
-Alternatively, You can also create this API manager by using the Console UI. Select the 3scale-amp project. From the 3Scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale
+Alternatively, You can also create this API manager by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale
 Red Hat Integration - 3scale > Click on the API Manager tab > Create APIManager > YAML view >. Remove the the existing yaml and copy paste the one shown above
 image:images/console-apimanager.gif[api-manager]
 ====
