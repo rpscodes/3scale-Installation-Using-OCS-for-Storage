@@ -5,7 +5,7 @@
 = {title}
 
 //Description text for Solution Pattern
-Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3scale users can customize the look and feel of the entire Developer Portal to match your own branding. They have complete control over every element of the portal in order to can make it as easy as possible for developers to learn how to use their API. A successful API Developer Portal will help your developers turn concepts into working apps in no time at all.
+Developers portals have become a very important starting point for businesses that want to share their APIs both internally and externally. Red Hat 3scale API management platform provides a highly customizable developer portal that organizations can leverage as a part of their API program. 3scale users can customize the look and feel of the entire Developer Portal to match their own use cases and branding. They have complete control over every element of the portal in order to make it as easy as possible for developers to understand how to use their API. A successful API Developer Portal will help your developers turn concepts into working apps in no time at all.
 
 3scale admins can customize the developer portal using HTML, CSS, JS, etc,. 3scale’s System File storage stores these Static files (HTML, CSS, JS, etc) uploaded to the System by its CMS feature, for the purpose of creating a Developer Portal. The System component of 3scales needs an RWX(ReadWriteMany) Persistent Volume for CMS and system app assets. An RWX Persistent Volume enables multiple nodes to simultaneously read and write to the storage volume. With an RWX access mode the system can be scaled horizontally with multiple pods uploading and reading said static files, which increases the scalability of the API manager and developer portal if needed. 
 
@@ -258,5 +258,4 @@ image:images/cred.png[admin-cred]
 image:images/dev-portal.gif[dev-portal]
 
 
-Write about API Manager a little bit
-Make changes to the intro
+
