@@ -104,7 +104,7 @@ image:images/3scale-operator-install-1.png[Operator-Install-1]
 
 . Choose 'threescale-2.10' and leave the rest of the values as default. Complete the operator installation 
 +
-image:images/3scale-operator-install-1.png[Operator-Install-1]
+image:images/3scale-operator-install-2.png[Operator-Install-2]
 
 . After the installation is complete. Navigate to Operators > Installed Operators to verify the same
 +
