@@ -41,11 +41,11 @@ OpenShift Password: Use your OPENTLC credentials to log into the OpenShift conso
 IMPORTANT: *READ THIS BEFORE PROCEEDING*. This demo only focusses on the RWX storage aspect of Red Hat 3scale installation and by no means a complete end to end installation of Red Hat 3Scale API Management.
 
 ## Installation Overview
-. Request RHPDS + create project
-. In web console, update machinesets to change 3rd set from 0 to 1 replica
+. Request Openshift (from RHPDS) 
+. Create a project to install 3scale
 . Install 3scale operator
 . Install OpenShift Container Storage operator
-. Create ClusterStorage resource using all 3 machines
+. Create ClusterStorage resource
 . Create APIManager resource
 
 *Credentials:* 
