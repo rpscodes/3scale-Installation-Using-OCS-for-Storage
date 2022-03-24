@@ -38,6 +38,8 @@ OpenShift Username: Use your OPENTLC credentials to log into the OpenShift conso
 
 OpenShift Password: Use your OPENTLC credentials to log into the OpenShift console
 
+IMPORTANT: *READ THIS BEFORE PROCEEDING*. This demo only focusses on the RWX storage aspect of Red Hat 3scale installation and by no means a complete end to end installation of Red Hat 3Scale API Management.
+
 ## Installation Overview
 . Request RHPDS + create project
 . In web console, update machinesets to change 3rd set from 0 to 1 replica
