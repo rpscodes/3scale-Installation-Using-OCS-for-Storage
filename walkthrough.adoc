@@ -68,34 +68,15 @@ image::images/rhpds-order.png[rhpds-order]
 
 
 ### 2. Create a 3scale project
-. Once provisioned, you can use `ssh` to the bastion using the SSH password provided in the email to create a new project.
+
+. Navigate to Projects on the Console UI and Click on Create Project 
 +
-[NOTE]
-====
-You can also use the OpenShift Console UI to create a project
-====
+image::images/project-menu.png[menu-projects]
 
-. sudo as `root` user:
-
-    # sudo -i
-    
 . Create `3scale-amp` project.
-    
-    # oc new-project 3scale-amp
 +
-image::images/terminal-3.png[cli]
+image::images/create-project.png[create-project]
 
-### 3. Update machinesets
-. In the web UI, navigate to `Compute` > `MachineSets`
-. You should see 3 MachineSets, with one spinned down. Update the machine count of that MachineSet to 1.
-+
-image:images/ms-1.png[machineset-1]
-+
-image:images/ms-2.png[machineset-2]
-+
-image:images/ms-3.png[machineset-3]
-+
-image:images/ms-3.png[machineset-4]
 
 ### 3. Install 3scale Operator
 . From the OpenShift Admin Console, navigate to Operators > OperatorHub > Type 3scale in the search box and click on the Red hat Integration - 3scale Operator and Install.  Make sure you are in the 3scale-amp project while you do this and following operations
