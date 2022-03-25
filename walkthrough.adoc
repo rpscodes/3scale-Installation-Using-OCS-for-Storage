@@ -128,7 +128,7 @@ Deploying the APIManager custom resource will make the operator begin processing
 
 . Make sure you are in the 3scale-amp project
 
-. Now create the API manager by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale Red Hat Integration - 3scale > Click on the API Manager tab > Create APIManager > YAML view >. Remove the the existing yaml and copy paste the one shown above
+. Now create the API manager by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale Red Hat Integration - 3scale > Click on the API Manager tab > Create APIManager > YAML view >. Remove the the existing yaml and copy paste the code provided in step 3 as shown below
 +
 image:images/console-apimanager.gif[api-manager]
 
