@@ -126,45 +126,14 @@ image:images/requested-cap-3.png[OCS-Requested-Capacity-3]
 ### 5. Create APIManager Resource
 Deploying the APIManager custom resource will make the operator begin processing and will deploy a 3scale solution from it
 
-. Open the terminal and check if you are in the 3scale-amp project:
+. Make sure you are in the 3scale-amp project
 
-    # oc project
-    
-. Create the `smtp.yml` configmap to configure SMTP access:
-
-    # vim smtp.yml
-    
-    kind: ConfigMap
-    apiVersion: v1
-    metadata:
-      name: smtp
-      labels:
-        app: 3scale-api-management
-        threescale_component: system
-        threescale_component_element: smtp
-    data:
-      address: 'smtp.gmail.com'
-      authentication: 'login'
-      domain: 'redhat.com'
-      openssl.verify.mode: 'false'
-      password: '<< your password>>'
-      port: '587'
-      username: '<< your userid>>'
-  
-. Add the configmap to `3scale-amp` namespace:
-
-    # oc create -f smtp.yml
-    
+. Now create the API manager by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale Red Hat Integration - 3scale > Click on the API Manager tab > Create APIManager > YAML view >. Remove the the existing yaml and copy paste the one shown above
 +
-[NOTE]
-====
-Alternatively, You can also create this configmap by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Home > API Explorer > ConfigMap > Instances > Create ConfigMap. Remove the the existing yaml and copy paste the one shown above
-image:images/console-configmap.gif[config-map]
-====
+image:images/console-apimanager.gif[api-manager]
 
-. Add the APIManager using the terminal:
 
-    # vim amp-s3.yml
+. YAML code for API Manager:
     
     apiVersion: apps.3scale.net/v1alpha1
     kind: APIManager
@@ -209,15 +178,6 @@ Optionally, you can create new tenants on the _MASTER portal URL_, with a fixed 
 https://master.example.com
 ```
 
-
-
-
-[NOTE]
-====
-Alternatively, You can also create this API manager by using the Console UI. Select the 3scale-amp project. From the 3scale-amp project navigate to Operators > Installed Operators > Red Hat Integration - 3scale
-Red Hat Integration - 3scale > Click on the API Manager tab > Create APIManager > YAML view >. Remove the the existing yaml and copy paste the one shown above
-image:images/console-apimanager.gif[api-manager]
-====
 
 
 ### 6. Verify the Installation
