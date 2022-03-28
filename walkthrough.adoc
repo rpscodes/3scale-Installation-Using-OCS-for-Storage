@@ -197,4 +197,7 @@ image:images/cred.png[admin-cred]
 image:images/dev-portal.gif[dev-portal]
 
 
+### Below is a hands on demo of the whole installation process:
++
+video::marfo-XcUZ8[youtube]
 
