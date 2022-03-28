@@ -200,5 +200,5 @@ image:images/dev-portal.gif[dev-portal]
 
 ### Below is a hands on demo of the whole installation process:
 
-video::marfo-XcUZ8[youtube]
+image:images/youtube_demo.png[link=https://www.youtube.com/watch?v=marfo-XcUZ8]
 
