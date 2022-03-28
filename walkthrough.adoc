@@ -48,6 +48,10 @@ IMPORTANT: *READ THIS BEFORE PROCEEDING*. This demo only focusses on the RWX sto
 . Create ClusterStorage resource
 . Create APIManager resource
 
+### Here's the video version for folks who prefer the format. (Though I would highly recommend going through the complete guide):
+
+image:images/youtube_demo.png[link=https://www.youtube.com/watch?v=marfo-XcUZ8]
+
 *Credentials:* 
 
 OpenShift Username: Use your OPENTLC credentials to log into the OpenShift console + 
