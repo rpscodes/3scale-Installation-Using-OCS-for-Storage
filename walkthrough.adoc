@@ -50,7 +50,7 @@ IMPORTANT: *READ THIS BEFORE PROCEEDING*. This demo only focusses on the RWX sto
 
 ### Here's the video version for folks who prefer the format. (Though I would highly recommend going through the complete guide):
 
-image:images/youtube_demo.png[link=https://www.youtube.com/watch?v=marfo-XcUZ8]
+image:images/youtube_demo.png[link=https://www.youtube.com/watch?v=Z3BfSXigQGw]
 
 *Credentials:* 
 
