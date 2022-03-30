@@ -104,6 +104,13 @@ image:images/installed-op.png[3scale-operator-install-verified]
 image:images/ocs-oh.png[OperatorHub-OCS]
 +
 image:images/ocs-operator-install-1.png[OCS-Operator-Install-1]
++
+[NOTE]
+====
+From OpenShift 4.9 onwards search and install the Red Hat Data Foundation operator instead of Red Hat Open Container Storage operator
++
+image:images/ocs-data-foundation.png[ODF-Operator-Install-1]
+====
 
 . Select update channel `stable-4.8` and install. The operator installation might take few minutes wai until the Create Storage Cluster button is activated. 
 +
